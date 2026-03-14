@@ -60,7 +60,7 @@ Uses separate x_table and or_table with pointer indirection.
 
 ### How They Compare
 
-- **`SetPixel_Movep`** ★★ — The absolute fastest general-purpose pixel plot. Uses `MOVEP.L` to access one byte from each of the 4 bitplanes in a single 24-cycle operation. The pixel modification (read + AND + OR + write) takes only 64 cycles vs 84 for MOVEM — a 20-cycle saving. Byte-sized masks also shrink OR table entries from 8 bytes to 4 bytes, resulting in the smallest tables (~26 KB) of any variant. Fastest AND most memory-efficient.
+- **`SetPixel_Movep`** ★★ — The absolute fastest general-purpose pixel plot. Uses `MOVEP.L` to access one byte from each of the 4 bitplanes in a single 24-cycle operation. The pixel modification (read + AND + OR + write) takes only 64 cycles vs 84 for MOVEM — a 20-cycle savings. Byte-sized masks also shrink OR table entries from 8 bytes to 4 bytes, resulting in the smallest tables (~26 KB) of any variant. Fastest AND most memory-efficient.
 
 - **`SetPixel_Ultra_WriteOnly`** ★★ — The absolute fastest write-only variant. Uses the mega-table approach with `or.l` directly to screen memory for minimal cycle count. 14 cycles faster than `SetPixel_WriteOnly` at the cost of larger tables.
 
